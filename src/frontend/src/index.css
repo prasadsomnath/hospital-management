@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: GeneralSans, sans-serif;
+    --font-body: GeneralSans, sans-serif;
+    --font-mono: GeneralSans, monospace;
+    --radius: 0.625rem;
+
+    --background: 0.98 0 0;
+    --foreground: 0.12 0.03 265;
+    --card: 0.99 0 0;
+    --card-foreground: 0.12 0.03 265;
+    --popover: 0.98 0.005 265;
+    --popover-foreground: 0.12 0.03 265;
+
+    --primary: 0.5 0.15 265;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.94 0.01 265;
+    --secondary-foreground: 0.15 0.02 265;
+    --muted: 0.94 0.01 265;
+    --muted-foreground: 0.5 0.02 265;
+
+    --accent: 0.68 0.22 31;
+    --accent-foreground: 0.99 0 0;
+
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.88 0.01 265;
+    --input: 0.91 0.01 265;
+    --ring: 0.5 0.15 265;
+
+    --chart-1: 0.68 0.22 31;
+    --chart-2: 0.5 0.18 265;
+    --chart-3: 0.42 0.15 227;
+    --chart-4: 0.72 0.18 155;
+    --chart-5: 0.7 0.17 55;
+
+    --sidebar: 0.97 0.005 265;
+    --sidebar-foreground: 0.12 0.03 265;
+    --sidebar-primary: 0.5 0.15 265;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.9 0.02 265;
+    --sidebar-accent-foreground: 0.3 0.02 265;
+    --sidebar-border: 0.88 0.01 265;
+    --sidebar-ring: 0.5 0.15 265;
+  }
+
+  .dark {
+    --background: 0.11 0.02 265;
+    --foreground: 0.96 0 0;
+    --card: 0.16 0.02 265;
+    --card-foreground: 0.96 0 0;
+    --popover: 0.18 0.02 265;
+    --popover-foreground: 0.96 0 0;
+
+    --primary: 0.55 0.15 265;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.22 0.02 265;
+    --secondary-foreground: 0.85 0.005 260;
+    --muted: 0.22 0.02 265;
+    --muted-foreground: 0.65 0.02 265;
+
+    --accent: 0.68 0.22 31;
+    --accent-foreground: 0.99 0 0;
+
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.99 0 0;
+
+    --border: 0.28 0.02 265;
+    --input: 0.28 0.02 265;
+    --ring: 0.55 0.15 265;
+
+    --chart-1: 0.68 0.22 31;
+    --chart-2: 0.55 0.18 265;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.75 0.18 155;
+    --chart-5: 0.72 0.17 55;
+
+    --sidebar: 0.14 0.02 265;
+    --sidebar-foreground: 0.96 0 0;
+    --sidebar-primary: 0.55 0.15 265;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.26 0.03 265;
+    --sidebar-accent-foreground: 0.85 0.005 260;
+    --sidebar-border: 0.22 0.02 265;
+    --sidebar-ring: 0.55 0.15 265;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased text-base font-medium;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: oklch(var(--card) / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(var(--border) / 0.5);
+  }
+
+  .glass-sm {
+    background: oklch(var(--card) / 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid oklch(var(--border) / 0.35);
+  }
+
+  .glass-elevated {
+    background: oklch(var(--card) / 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(var(--border) / 0.6);
+    box-shadow: 0 8px 32px oklch(var(--foreground) / 0.08);
+  }
+
+  .shadow-glass {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-glass-sm {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-glass-lg {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ── Global date / time input polish ───────────────────────────────────── */
+  /*  Applies to any remaining native <input type="date|time"> that hasn't    */
+  /*  been replaced with a custom component yet.                               */
+  input[type="date"],
+  input[type="time"] {
+    @apply rounded-lg border border-border bg-background text-foreground px-3 py-1.5 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-400;
+  }
+
+  /* Hide the browser native calendar / clock picker icon arrow */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    opacity: 0.4;
+    cursor: pointer;
+    filter: invert(50%) sepia(80%) saturate(500%) hue-rotate(10deg);
+  }
+
+  /* Firefox date/time field text color */
+  input[type="date"]::-moz-placeholder,
+  input[type="time"]::-moz-placeholder {
+    color: oklch(var(--muted-foreground));
+  }
+
+  /* Global typography overrides to increase size and make bold */
+  .text-xs {
+    font-size: 0.875rem !important;
+    /* 14px instead of 12px */
+    font-weight: 500 !important;
+  }
+
+  .text-sm {
+    font-size: 0.9375rem !important;
+    /* 15px instead of 14px */
+    font-weight: 500 !important;
+  }
+
+  .text-base {
+    font-size: 1.0625rem !important;
+    /* 17px instead of 16px */
+    font-weight: 500 !important;
+  }
+
+  .text-lg {
+    font-size: 1.25rem !important;
+    /* 20px instead of 18px */
+    font-weight: 600 !important;
+  }
+
+  .text-xl {
+    font-size: 1.375rem !important;
+    /* 22px instead of 20px */
+    font-weight: 600 !important;
+  }
+
+  .text-2xl {
+    font-size: 1.625rem !important;
+    /* 26px instead of 24px */
+    font-weight: 700 !important;
+  }
+
+  .text-3xl {
+    font-size: 2rem !important;
+    /* 32px instead of 30px */
+    font-weight: 700 !important;
+  }
+
+  .text-4xl {
+    font-size: 2.5rem !important;
+    /* 40px instead of 36px */
+    font-weight: 800 !important;
+  }
+
+  .font-normal {
+    font-weight: 500 !important;
+  }
+
+  .font-medium {
+    font-weight: 600 !important;
+  }
+
+  .font-semibold {
+    font-weight: 700 !important;
+  }
+
+  .font-bold {
+    font-weight: 800 !important;
+  }
+
+  .font-extrabold {
+    font-weight: 900 !important;
+  }
+
+  /* Ensure interactive inputs and form labels are large, clear, and visible */
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+  }
+
+  label {
+    font-weight: 600 !important;
+  }
+}
+
+/* ── Global Responsiveness Overrides ─────────────────────────────────────── */
+
+/* Automatically make all table container divs scrollable horizontally on mobile */
+div:has(> table) {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent table headers and cells from wrapping awkwardly on narrow screens */
+table th,
+table td {
+  white-space: nowrap;
+}
+
+/* Allow cells with the wrap-cell class to wrap normally */
+table td.wrap-cell {
+  white-space: normal !important;
+}
+
+/* Make all main page headers stack vertically on screens below 640px */
+@media (max-width: 640px) {
+  .space-y-6 > div.flex:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  .space-y-6 > div.flex:first-child > button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Ensure all TabsList/tablist containers are responsive and scroll horizontally on overflow */
+div[role="tablist"],
+[data-slot="tabs-list"] {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  flex-wrap: nowrap !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar utility class */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -1,0 +1,18 @@
+{
+  // Suppress VS Code CSS linter warnings for Tailwind directives (@tailwind, @apply, @layer, etc.)
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+
+  // Tell the CSS language server to validate only standard CSS (Tailwind handles its own validation)
+  "css.validate": false,
+
+  // Java: treat microservice source roots as known source paths so files
+  // are no longer flagged as "non-project files"
+  "java.project.sourcePaths": [
+    "microservices/hospital-service/src/main/java",
+    "microservices/patient-service/src/main/java"
+  ],
+
+  // Suppress "non-project file" info messages from the Java language server
+  "java.configuration.updateBuildConfiguration": "automatic"
+}

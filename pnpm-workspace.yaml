@@ -1,0 +1,12 @@
+packages:
+  - src/**/*
+allowBuilds:
+  '@biomejs/biome': true
+  electron-winstaller: true
+  esbuild: true
+  sharp: true
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - esbuild
+  - sharp
+  - '@img/sharp-libvips-darwin-arm64'

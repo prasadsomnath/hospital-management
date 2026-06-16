@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.mops/
+.old/
+.platform/
+.pnpm-store/
+.cache/
+# Electron/Desktop builds
+src/frontend/desktop-build/
+dist/
+release/
+out/
+*.exe
+*.dmg
+*.app
+*.zip

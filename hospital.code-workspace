@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "Frontend & IC Backend (Charlie)",
+      "path": "."
+    },
+    {
+      "name": "Microservices",
+      "path": "../microservices"
+    }
+  ],
+  "settings": {
+    "java.import.maven.enabled": true
+  }
+}

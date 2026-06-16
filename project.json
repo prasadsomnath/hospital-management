@@ -1,0 +1,26 @@
+{
+  "overview": "HealthMatrix360 is a comprehensive hospital management system supporting multiple hospitals with role-based access for Super Admin, Hospital Admin, Doctor, Receptionist, and Patient. Features include light/dark theme toggle, multi-hospital data scoping, Super Admin dashboard for cross-hospital oversight, patient management, appointments, prescriptions, and billing.",
+  "features": [
+    "Light/dark theme toggle with persisted preference",
+    "Super Admin role with cross-hospital oversight dashboard",
+    "Multi-hospital architecture with data scoping by hospital",
+    "Hospital Management: add/edit/activate/deactivate hospitals",
+    "Cross-hospital analytics and audit logs",
+    "User oversight and management across all hospitals",
+    "Hospital profile settings (name, logo, address, contact)",
+    "Role-based dashboards: Admin, Doctor, Receptionist, Patient",
+    "Patient registration, appointment booking, prescriptions, billing"
+  ],
+  "category": "healthcare",
+  "tags": [
+    "hospital",
+    "healthcare",
+    "management",
+    "multi-tenant",
+    "role-based",
+    "admin",
+    "appointments",
+    "billing"
+  ],
+  "last_updated": "2026-05-16T06:09:51.004Z"
+}

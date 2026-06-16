@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "PolyClinic",
+    "slug": "polyclinic-patient",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F4F6FA"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.polyclinic.patient"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F4F6FA"
+      },
+      "package": "com.polyclinic.patient"
+    },
+    "scheme": "polyclinic",
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "port": 4000
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ]
+  }
+}
