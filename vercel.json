@@ -1,6 +1,6 @@
 {
-  "buildCommand": "corepack enable && corepack prepare pnpm@11.1.2 --activate && pnpm -r --if-present run build",
+  "buildCommand": "npm exec pnpm@11.1.2 -- -r --if-present run build",
   "outputDirectory": "src/frontend/dist",
-  "devCommand": "pnpm dev",
-  "installCommand": "corepack enable && corepack prepare pnpm@11.1.2 --activate && pnpm install"
+  "devCommand": "npm exec pnpm@11.1.2 -- dev",
+  "installCommand": "npm exec pnpm@11.1.2 -- install"
 }
