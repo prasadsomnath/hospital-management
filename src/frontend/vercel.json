@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm exec pnpm@11.1.2 -- install && npm exec pnpm@11.1.2 -- build",
+  "outputDirectory": "dist",
+  "devCommand": "npm exec pnpm@11.1.2 -- dev",
+  "installCommand": "npm exec pnpm@11.1.2 -- install"
+}
